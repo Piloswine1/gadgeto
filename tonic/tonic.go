@@ -108,8 +108,8 @@ func DefaultBindingHookMaxBodyBytes(maxBodyBytes int64) BindHook {
 			b = binding.FormMultipart
 		} else if len(ct) == 1 && ct[0] == binding.MIMEXML {
 			b = binding.XML
-		} else if len(ct) == 1 && ct[0] == binding.MIMEXML {
-			b = binding.XML
+		} else if len(ct) == 1 && ct[0] == binding.MIMEYAML {
+			b = binding.YAML
 		}
 
 		if err := c.ShouldBindWith(i, b); err != nil && err != io.EOF {
